@@ -1,0 +1,169 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{29CEF41F-4290-43D0-BCB4-795031E627A3}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ClienteREST</RootNamespace>
+    <AssemblyName>Cliente REST</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Builder\ClienteBuilder.cs" />
+    <Compile Include="Builder\FuncionarioBuilder.cs" />
+    <Compile Include="Controle\CtrlDepartamento.cs" />
+    <Compile Include="Controle\CtrlEndereco.cs" />
+    <Compile Include="Controle\CtrlCliente.cs" />
+    <Compile Include="Controle\CtrlFuncionario.cs" />
+    <Compile Include="Controle\CtrlSexo.cs" />
+    <Compile Include="Controle\IntControle.cs" />
+    <Compile Include="DTO\ClienteDTO.cs" />
+    <Compile Include="DTO\DepartamentoDTO.cs" />
+    <Compile Include="DTO\EnderecoDTO.cs" />
+    <Compile Include="DTO\FuncionarioDTO.cs" />
+    <Compile Include="DTO\ObjetoDTO.cs" />
+    <Compile Include="DTO\PessoaDTO.cs" />
+    <Compile Include="DTO\SexoDTO.cs" />
+    <Compile Include="Operador\IntOperadorREST.cs" />
+    <Compile Include="Modelo\Cliente.cs" />
+    <Compile Include="Modelo\Departamento.cs" />
+    <Compile Include="Modelo\Endereco.cs" />
+    <Compile Include="Modelo\Funcionario.cs" />
+    <Compile Include="Modelo\Objeto.cs" />
+    <Compile Include="Modelo\Pessoa.cs" />
+    <Compile Include="Modelo\Sexo.cs" />
+    <Compile Include="Operador\OperadorJson.cs" />
+    <Compile Include="Operador\OperatorXml.cs" />
+    <Compile Include="Operador\Requisicao.cs" />
+    <Compile Include="Util\UrlServico.cs" />
+    <Compile Include="Visao\CadastrarDepartamento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Visao\CadastrarDepartamento.Designer.cs">
+      <DependentUpon>CadastrarDepartamento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Visao\CadastrarCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Visao\CadastrarCliente.Designer.cs">
+      <DependentUpon>CadastrarCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Visao\CadastrarEndereco.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Visao\CadastrarEndereco.Designer.cs">
+      <DependentUpon>CadastrarEndereco.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Visao\CadastrarFuncionario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Visao\CadastrarFuncionario.Designer.cs">
+      <DependentUpon>CadastrarFuncionario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Visao\Seletor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Visao\Seletor.Designer.cs">
+      <DependentUpon>Seletor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Visao\VisualizarEndereco.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Visao\VisualizarEndereco.Designer.cs">
+      <DependentUpon>VisualizarEndereco.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Visao\CadastrarDepartamento.resx">
+      <DependentUpon>CadastrarDepartamento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Visao\CadastrarCliente.resx">
+      <DependentUpon>CadastrarCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Visao\CadastrarEndereco.resx">
+      <DependentUpon>CadastrarEndereco.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Visao\CadastrarFuncionario.resx">
+      <DependentUpon>CadastrarFuncionario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Visao\Seletor.resx">
+      <DependentUpon>Seletor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Visao\VisualizarEndereco.resx">
+      <DependentUpon>VisualizarEndereco.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
